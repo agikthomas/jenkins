@@ -14,5 +14,15 @@ pipeline {
                 sh "mvn clean package"
             }
         }
+        stage("Check status of run") {
+            environment {
+                PATH = "/home/agikthomas:$PATH"
+            }
+            sshagent(['service-integration-sdh-1']) {
+                sh """
+                   ssh -o StrictHostKeyChecking=no elastic-package status
+                """
+            }
+        }    
     }
 }
