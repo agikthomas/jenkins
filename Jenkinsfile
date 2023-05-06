@@ -9,11 +9,11 @@ pipeline {
 //                git 'https://github.com/javahometech/myweb'
 //             }
 //         }
-        stage("Maven build") {
-            steps {
-                sh "mvn clean package"
-            }
-        }
+//         stage("Maven build") {
+//             steps {
+//                 sh "mvn clean package"
+//             }
+//         }
         stage("Check status of run") {
             environment {
                 PATH="/home/agikthomas:$PATH"
