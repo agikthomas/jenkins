@@ -21,7 +21,7 @@ pipeline {
             steps {
                 sshagent(['service-integration-sdh-1']) {
                     sh """
-                       ssh -o StrictHostKeyChecking=no -l agikthomas 10.160.0.4 elastic-package status
+                       ssh -o StrictHostKeyChecking=no -l agikthomas 10.160.0.4 elastic-package stack status
                     """
                 }
             }
